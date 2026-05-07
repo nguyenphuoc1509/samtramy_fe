@@ -30,7 +30,7 @@ const footerColumns = [
   {
     title: "CÂU HỎI",
     links: [
-      { label: "Tài khoản", href: "/tai-khoan" },
+      { label: "Thông tin cá nhân", href: "/thong-tin-ca-nhan" },
       { label: "Theo dõi đơn hàng", href: "/theo-doi-don-hang" },
       { label: "Đơn hàng", href: "/don-hang" },
       { label: "Thanh toán", href: "/thanh-toan" },
@@ -82,7 +82,7 @@ const socialLinks = [
 
 const paymentMethods = [
   { src: "/images/payments/visa.png", alt: "Visa" },
-  { src: "/images/payments/mastercard.png", alt: "Mastercard" },
+  { src: "/images/payments/mastercard.webp", alt: "Mastercard" },
   { src: "/images/payments/paypal.png", alt: "PayPal" },
   { src: "/images/payments/apple-pay.png", alt: "Apple Pay" },
   { src: "/images/payments/google-pay.png", alt: "Google Pay" },
@@ -173,7 +173,7 @@ export default function Footer() {
             {paymentMethods.map((item) => (
               <div
                 key={item.alt}
-                className="relative h-5 w-9 overflow-hidden rounded bg-white"
+                className="relative h-6 w-12 overflow-hidden rounded bg-white cursor-pointer"
               >
                 <Image
                   src={item.src}

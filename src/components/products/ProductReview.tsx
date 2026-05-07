@@ -63,7 +63,7 @@ export default function ProductReviews({ reviews }: ProductReviewsProps) {
           type="button"
           className="
             rounded-full border border-[#087c43] px-6 py-2 text-sm font-semibold
-            text-[#087c43] transition hover:bg-[#087c43] hover:text-white
+            text-[#087c43] transition hover:bg-[#087c43] hover:text-white cursor-pointer
           "
         >
           Xem thêm đánh giá

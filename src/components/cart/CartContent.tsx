@@ -80,7 +80,7 @@ export default function CartContent() {
       <button
         type="button"
         onClick={() => window.history.back()}
-        className="flex h-9 w-9 items-center justify-center rounded-full border border-[#dfe7e2] bg-white text-[#63746e] transition-all duration-200 hover:border-[#087c43] hover:text-[#087c43]"
+        className="flex h-9 w-9 items-center cursor-pointer justify-center text-[#63746e] transition-all duration-200 hover:border-[#087c43] hover:text-[#087c43]"
         aria-label="Quay lại trang trước"
       >
         <ArrowLeft size={16} strokeWidth={2.5} />

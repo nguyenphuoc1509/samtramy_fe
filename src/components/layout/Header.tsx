@@ -101,7 +101,7 @@ export default function Header() {
           {isLoggedIn ? (
             <div className="flex items-center gap-3">
               <Link
-                href="/tai-khoan"
+                href="/thong-tin-ca-nhan"
                 className="flex items-center gap-2 transition hover:text-white"
               >
                 <UserCircle size={27} />
