@@ -11,7 +11,6 @@ import {
   PolicySection,
   TradeSupportSection,
   CooperationProcessSection,
-  RegistrationFormSection,
 } from "@/components/distribution";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";

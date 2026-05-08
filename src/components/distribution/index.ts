@@ -8,4 +8,3 @@ export { PartnerFitSection } from "./PartnerFitSection";
 export { PolicySection } from "./PolicySection";
 export { TradeSupportSection } from "./TradeSupportSection";
 export { CooperationProcessSection } from "./CooperationProcessSection";
-export { RegistrationFormSection } from "./RegistrationFormSection";
