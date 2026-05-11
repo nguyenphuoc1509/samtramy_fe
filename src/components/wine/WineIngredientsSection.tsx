@@ -95,7 +95,7 @@ export function WineIngredientsSection() {
               <div
                 className="
                   relative flex h-13 w-13 shrink-0 items-center justify-center
-                  rounded-full bg-[#fff0bd] text-[#9b2b2b]
+                  rounded-full bg-[#fff0bd] text-[#063f32]
                   shadow-[0_8px_18px_rgba(0,0,0,0.14)]
                   ring-4 ring-white/10
                 "
@@ -117,7 +117,7 @@ export function WineIngredientsSection() {
               <figure className="flex flex-col">
                 <div
                   className="
-                    relative h-[260px] overflow-hidden rounded-[24px]
+                    relative h-[360px] overflow-hidden rounded-[12px]
                     bg-[#f7f3ea] shadow-[0_16px_36px_rgba(6,63,50,0.08)]
                     ring-1 ring-[#eadfcd]
                   "

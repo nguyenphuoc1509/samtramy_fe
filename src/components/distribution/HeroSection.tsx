@@ -1,117 +1,122 @@
+"use client";
+
 import Image from "next/image";
 import { ArrowRight, Handshake } from "lucide-react";
+import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
+import { AnimateOnScroll } from "./AnimateOnScroll";
 import { heroProducts } from "./data";
+
+const heroStats = [
+  { label: "B2B", description: "Định hướng hợp tác phân phối" },
+  { label: "GT", description: "Phù hợp kênh bán lẻ truyền thống" },
+  { label: "24/7", description: "Hỗ trợ tư vấn đối tác" },
+];
 
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-[#f5f5f3]">
-      {/* Decorative background */}
       <div className="absolute -left-32 top-10 h-[360px] w-[360px] rounded-full bg-[#087c43]/10 blur-[90px]" />
       <div className="absolute -right-32 top-24 h-[420px] w-[420px] rounded-full bg-[#f5d36b]/30 blur-[100px]" />
       <div className="absolute inset-x-0 bottom-0 h-[220px] bg-gradient-to-t from-[#eef6f1] to-transparent" />
 
       <div className="site-container relative grid min-h-[720px] items-center gap-12 py-10 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
-          <div
-            className="
-              mb-5 inline-flex items-center gap-2 rounded-full
-              bg-white px-4 py-2 text-[13px] font-semibold text-[#087c43]
-              shadow-[0_10px_26px_rgba(6,63,50,0.08)]
-              ring-1 ring-[#e3ebe6]
-            "
-          >
-            <Handshake size={16} />
-            Hợp tác phân phối Samtramy
-          </div>
+          <AnimateOnScroll animation="fadeUp" distance={30}>
+            <div
+              className="
+                mb-5 inline-flex items-center gap-2 rounded-full
+                bg-white px-4 py-2 text-[13px] font-semibold text-[#087c43]
+                shadow-[0_10px_26px_rgba(6,63,50,0.08)]
+                ring-1 ring-[#e3ebe6]
+              "
+            >
+              <Handshake size={16} />
+              Hợp tác phân phối Samtramy
+            </div>
+          </AnimateOnScroll>
 
-          <h1 className="max-w-[720px] text-[42px] font-bold leading-tight tracking-[-0.045em] text-[#063f32] md:text-[62px]">
-            Nhà cung cấp sản phẩm tiêu dùng từ Sâm Ngọc Linh cho đối tác phân phối
-          </h1>
+          <AnimateOnScroll animation="fadeUp" delay={0.08} distance={30}>
+            <h1 className="max-w-[720px] text-[42px] font-bold leading-tight tracking-[-0.045em] text-[#063f32] md:text-[62px]">
+              Nhà cung cấp sản phẩm tiêu dùng từ Sâm Ngọc Linh cho đối tác
+              phân phối
+            </h1>
+          </AnimateOnScroll>
 
-          <p className="mt-6 max-w-[620px] text-[17px] leading-8 text-[#526861]">
-            Samtramy cung cấp danh mục sản phẩm tiêu dùng có nguồn gốc rõ
-            ràng, bao bì chỉn chu, dễ trưng bày, dễ tư vấn và phù hợp phát
-            triển doanh số tại kênh bán lẻ, cửa hàng đặc sản, quà biếu và nhà
-            phân phối khu vực.
-          </p>
+          <AnimateOnScroll animation="fadeUp" delay={0.14} distance={30}>
+            <p className="mt-6 max-w-[620px] text-[17px] leading-8 text-[#526861]">
+              Samtramy cung cấp danh mục sản phẩm tiêu dùng có nguồn gốc rõ
+              ràng, bao bì chỉn chu, dễ trưng bày, dễ tư vấn và phù hợp phát
+              triển doanh số tại kênh bán lẻ, cửa hàng đặc sản, quà biếu và
+              nhà phân phối khu vực.
+            </p>
+          </AnimateOnScroll>
 
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a href="#partner-form">
-              <Button
-                type="button"
-                className="
-                  h-12 cursor-pointer rounded-full bg-[#087c43] px-7
-                  text-[14px] font-bold text-white
-                  shadow-[0_12px_28px_rgba(8,124,67,0.22)]
-                  transition-colors duration-200 hover:bg-[#0a6f3d]
-                "
-              >
-                Nhận chính sách phân phối
-                <ArrowRight size={17} />
-              </Button>
-            </a>
+          <AnimateOnScroll animation="fadeUp" delay={0.2} distance={30}>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a href="#partner-form">
+                <Button
+                  type="button"
+                  className="
+                    h-12 cursor-pointer rounded-full bg-[#087c43] px-7
+                    text-[14px] font-bold text-white
+                    shadow-[0_12px_28px_rgba(8,124,67,0.22)]
+                    transition-colors duration-200 hover:bg-[#0a6f3d]
+                  "
+                >
+                  Nhận chính sách phân phối
+                  <ArrowRight size={17} />
+                </Button>
+              </a>
 
-            <a href="#product-categories">
-              <Button
-                type="button"
-                variant="outline"
-                className="
-                  h-12 cursor-pointer rounded-full border-[#d8e0db]
-                  bg-white px-7 text-[14px] font-bold text-[#063f32]
-                  shadow-[0_10px_24px_rgba(6,63,50,0.06)]
-                  transition-colors duration-200 hover:bg-[#eef6f1]
-                "
-              >
-                Xem danh mục sản phẩm
-              </Button>
-            </a>
-          </div>
+              <a href="#product-categories">
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="
+                    h-12 cursor-pointer rounded-full border-[#d8e0db]
+                    bg-white px-7 text-[14px] font-bold text-[#063f32]
+                    shadow-[0_10px_24px_rgba(6,63,50,0.06)]
+                    transition-colors duration-200 hover:bg-[#eef6f1]
+                  "
+                >
+                  Xem danh mục sản phẩm
+                </Button>
+              </a>
+            </div>
+          </AnimateOnScroll>
 
           <div className="mt-10 grid max-w-[620px] gap-4 sm:grid-cols-3">
-            <div
-              className="
-                rounded-2xl bg-white p-5
-                shadow-[0_12px_28px_rgba(6,63,50,0.06)]
-                ring-1 ring-[#e3ebe6]
-              "
-            >
-              <p className="text-[30px] font-bold text-[#087c43]">B2B</p>
-              <p className="mt-1 text-[13px] leading-5 text-[#6f827b]">
-                Định hướng hợp tác phân phối
-              </p>
-            </div>
-
-            <div
-              className="
-                rounded-2xl bg-white p-5
-                shadow-[0_12px_28px_rgba(6,63,50,0.06)]
-                ring-1 ring-[#e3ebe6]
-              "
-            >
-              <p className="text-[30px] font-bold text-[#087c43]">GT</p>
-              <p className="mt-1 text-[13px] leading-5 text-[#6f827b]">
-                Phù hợp kênh bán lẻ truyền thống
-              </p>
-            </div>
-
-            <div
-              className="
-                rounded-2xl bg-white p-5
-                shadow-[0_12px_28px_rgba(6,63,50,0.06)]
-                ring-1 ring-[#e3ebe6]
-              "
-            >
-              <p className="text-[30px] font-bold text-[#087c43]">24/7</p>
-              <p className="mt-1 text-[13px] leading-5 text-[#6f827b]">
-                Hỗ trợ tư vấn đối tác
-              </p>
-            </div>
+            {heroStats.map((stat) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.35, duration: 0.5 }}
+                className="
+                  rounded-2xl bg-white p-5
+                  shadow-[0_12px_28px_rgba(6,63,50,0.06)]
+                  ring-1 ring-[#e3ebe6]
+                "
+              >
+                <p className="text-[30px] font-bold text-[#087c43]">
+                  {stat.label}
+                </p>
+                <p className="mt-1 text-[13px] leading-5 text-[#6f827b]">
+                  {stat.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[540px]">
+        <AnimateOnScroll
+          animation="scaleIn"
+          distance={0}
+          className="relative mx-auto w-full max-w-[540px]"
+        >
           <div className="absolute -left-8 -top-8 h-[190px] w-[190px] rounded-full bg-[#087c43]/12 blur-[70px]" />
           <div className="absolute -bottom-8 right-0 h-[220px] w-[220px] rounded-full bg-[#f5d36b]/35 blur-[70px]" />
 
@@ -139,12 +144,13 @@ export function HeroSection() {
                   Samtramy Supplier
                 </p>
                 <p className="mt-2 text-[22px] font-bold leading-tight text-[#063f32]">
-                  Không chỉ cung cấp sản phẩm, chúng tôi đồng hành cùng đối tác bán ra.
+                  Không chỉ cung cấp sản phẩm, chúng tôi đồng hành cùng đối
+                  tác bán ra.
                 </p>
               </div>
             </div>
           </div>
-        </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );

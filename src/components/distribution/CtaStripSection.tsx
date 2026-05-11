@@ -1,4 +1,7 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 
@@ -6,7 +9,11 @@ export function CtaStripSection() {
   return (
     <section className="bg-[#f5f5f3] pb-20">
       <div className="site-container">
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="
             overflow-hidden rounded-[32px] bg-[#063f32] p-6
             shadow-[0_18px_45px_rgba(6,63,50,0.16)]
@@ -20,12 +27,14 @@ export function CtaStripSection() {
               </p>
 
               <h3 className="text-[26px] font-bold leading-tight text-white md:text-[34px]">
-                Muốn biết danh mục nào phù hợp với khu vực và mô hình kinh doanh của bạn?
+                Muốn biết danh mục nào phù hợp với khu vực và mô hình kinh
+                doanh của bạn?
               </h3>
 
               <p className="mt-3 max-w-[760px] text-[14px] leading-7 text-white/72">
                 Samtramy sẽ tư vấn nhóm sản phẩm khởi đầu, chính sách nhập
-                hàng và cách triển khai bán ra phù hợp với điểm bán của quý đối tác.
+                hàng và cách triển khai bán ra phù hợp với điểm bán của
+                quý đối tác.
               </p>
             </div>
 
@@ -43,7 +52,7 @@ export function CtaStripSection() {
               </Button>
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

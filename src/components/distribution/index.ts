@@ -8,3 +8,9 @@ export { PartnerFitSection } from "./PartnerFitSection";
 export { PolicySection } from "./PolicySection";
 export { TradeSupportSection } from "./TradeSupportSection";
 export { CooperationProcessSection } from "./CooperationProcessSection";
+
+export {
+  AnimateOnScroll,
+  StaggerContainer,
+  staggerItemVariants,
+} from "./AnimateOnScroll";
