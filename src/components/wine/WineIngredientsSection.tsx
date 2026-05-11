@@ -151,7 +151,7 @@ export function WineIngredientsSection() {
           <WineConsultButton
             className="
               h-12 cursor-pointer rounded-full
-              bg-gradient-to-r from-[#ff7a3d] to-[#e9235f]
+              bg-[#087c43]
               px-10 text-[14px] font-bold uppercase text-white
               shadow-[0_14px_28px_rgba(229,35,95,0.26)]
               transition duration-200 hover:-translate-y-0.5
