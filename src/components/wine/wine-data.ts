@@ -123,19 +123,28 @@ export const wineOccasions: WineOccasion[] = [
   },
 ];
 
-export const wineProducts = [
+export const wineProducts: Array<{
+  slug: string;
+  name: string;
+  image: string;
+  price: string;
+  oldPrice?: string;
+}> = [
   {
+    slug: "ruou-sam-ngoc-linh-500ml",
     name: "Rượu Sâm Ngọc Linh 500ml",
     image: "/images/products/product-1.png",
     price: "1.050.000đ",
     oldPrice: "1.250.000đ",
   },
   {
+    slug: "ruou-sam-ngoc-linh-hop-qua",
     name: "Rượu Sâm Ngọc Linh Hộp Quà",
     image: "/images/products/product-2.png",
     price: "1.250.000đ",
   },
   {
+    slug: "combo-ruou-sam-bieu-tang",
     name: "Combo Rượu Sâm Biếu Tặng",
     image: "/images/products/product-3.png",
     price: "Liên hệ",

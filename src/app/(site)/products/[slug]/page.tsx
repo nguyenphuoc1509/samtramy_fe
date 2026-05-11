@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function ProductDetailPage() {
   return (
-    <main className="w-full bg-[#f5f5f3] py-8">
+    <main className="w-full bg-[#f5f5f3] py-8 scroll-mt-42">
       <div className="site-container">
         {/* Breadcrumb */}
         <Breadcrumb
