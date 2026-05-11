@@ -1,8 +1,9 @@
-import Image from "next/image";
-import { PhoneCall } from "lucide-react";
+"use client";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { PhoneCall, CheckCircle2 } from "lucide-react";
+import { AnimateOnScroll } from "./AnimateOnScroll";
 
 export function WineContactBanner() {
   return (
@@ -14,7 +15,6 @@ export function WineContactBanner() {
             shadow-[0_24px_70px_rgba(6,63,50,0.16)]
           "
         >
-          {/* Full background image */}
           <Image
             src="/images/banners/hero-2.jpg"
             alt="Tư vấn rượu Sâm Ngọc Linh Samtramy"
@@ -23,7 +23,6 @@ export function WineContactBanner() {
             sizes="1400px"
           />
 
-          {/* Overlay for readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#063f32]/82 via-[#063f32]/38 to-black/10" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/28 via-transparent to-transparent" />
 
@@ -32,9 +31,13 @@ export function WineContactBanner() {
               relative z-10 grid min-h-[560px] items-center gap-8 lg:grid-cols-[1fr_420px] site-container
             "
           >
-            {/* Short text */}
-            <div className="max-w-[560px] text-white">
-              <div
+            {/* Left — text */}
+            <AnimateOnScroll animation="fadeLeft" distance={32} className="max-w-[560px] text-white">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
                 className="
                   mb-5 inline-flex items-center gap-2 rounded-full
                   bg-white/12 px-4 py-2 text-[12px] font-bold uppercase
@@ -44,30 +47,41 @@ export function WineContactBanner() {
               >
                 <PhoneCall size={15} />
                 Samtramy tư vấn
-              </div>
+              </motion.div>
 
-              <h2
-                className="
-                  text-[34px] font-bold leading-tight tracking-[-0.04em]
-                  md:text-[50px]
-                "
+              <motion.h2
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ delay: 0.12, duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="text-[34px] font-bold leading-tight tracking-[-0.04em] md:text-[50px]"
               >
                 Cần tư vấn rượu sâm?
-              </h2>
+              </motion.h2>
 
-              <p className="mt-4 max-w-[480px] text-[15px] leading-8 text-white/78">
+              <motion.p
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ delay: 0.22, duration: 0.6 }}
+                className="mt-4 max-w-[480px] text-[15px] leading-8 text-white/78"
+              >
                 Để lại thông tin, Samtramy sẽ liên hệ tư vấn sản phẩm và combo
                 quà biếu phù hợp.
-              </p>
-            </div>
+              </motion.p>
+            </AnimateOnScroll>
 
-            {/* Compact form */}
-            <form
+            {/* Right — compact form */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.94, y: 24 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ delay: 0.18, duration: 0.65, ease: [0.19, 1, 0.22, 1] }}
               className="
-                w-full max-w-[390px] justify-self-center rounded-[28px] bg-white/94 p-5
-    shadow-[0_20px_60px_rgba(0,0,0,0.2)]
-    ring-1 ring-white/50 backdrop-blur-md
-    md:p-6
+                w-full max-w-[390px] justify-self-center rounded-[28px] bg-white/95 p-5
+                shadow-[0_20px_60px_rgba(0,0,0,0.22)]
+                ring-1 ring-white/60 backdrop-blur-md
+                md:p-6
               "
             >
               <div className="mb-5">
@@ -81,55 +95,76 @@ export function WineContactBanner() {
               </div>
 
               <div className="space-y-3">
-                <Input
-                  type="text"
-                  placeholder="Họ và tên"
-                  className="
-                    h-11 rounded-2xl border-[#d8e0db] bg-white px-4
-                    text-[14px] text-[#063f32] shadow-none
-                    placeholder:text-[#9aa9a4]
-                    focus-visible:border-[#087c43]
-                    focus-visible:ring-[#087c43]/15
-                  "
-                />
+                <div>
+                  <label className="mb-1.5 block text-[12px] font-semibold text-[#063f32]">
+                    Họ và tên
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Họ và tên"
+                    className="
+                      h-11 w-full rounded-2xl border border-[#d8e0db] bg-white px-4
+                      text-[14px] text-[#063f32] outline-none
+                      placeholder:text-[#b0c0ba]
+                      transition-all duration-200
+                      focus:border-[#087c43] focus:ring-4 focus:ring-[#087c43]/12
+                    "
+                  />
+                </div>
 
-                <Input
-                  type="tel"
-                  placeholder="Số điện thoại"
-                  className="
-                    h-11 rounded-2xl border-[#d8e0db] bg-white px-4
-                    text-[14px] text-[#063f32] shadow-none
-                    placeholder:text-[#9aa9a4]
-                    focus-visible:border-[#087c43]
-                    focus-visible:ring-[#087c43]/15
-                  "
-                />
+                <div>
+                  <label className="mb-1.5 block text-[12px] font-semibold text-[#063f32]">
+                    Số điện thoại
+                  </label>
+                  <input
+                    type="tel"
+                    placeholder="Số điện thoại"
+                    className="
+                      h-11 w-full rounded-2xl border border-[#d8e0db] bg-white px-4
+                      text-[14px] text-[#063f32] outline-none
+                      placeholder:text-[#b0c0ba]
+                      transition-all duration-200
+                      focus:border-[#087c43] focus:ring-4 focus:ring-[#087c43]/12
+                    "
+                  />
+                </div>
 
-                <textarea
-                  placeholder="Nhu cầu tư vấn"
-                  className="
-                    min-h-[92px] w-full resize-none rounded-2xl
-                    border border-[#d8e0db] bg-white px-4 py-3
-                    text-[14px] text-[#063f32] outline-none
-                    placeholder:text-[#9aa9a4]
-                    focus:border-[#087c43]
-                    focus:ring-4 focus:ring-[#087c43]/15
-                  "
-                />
+                <div>
+                  <label className="mb-1.5 block text-[12px] font-semibold text-[#063f32]">
+                    Nhu cầu tư vấn
+                  </label>
+                  <textarea
+                    placeholder="Nhu cầu tư vấn"
+                    className="
+                      min-h-[92px] w-full resize-none rounded-2xl
+                      border border-[#d8e0db] bg-white px-4 py-3
+                      text-[14px] text-[#063f32] outline-none
+                      placeholder:text-[#b0c0ba]
+                      transition-all duration-200
+                      focus:border-[#087c43] focus:ring-4 focus:ring-[#087c43]/12
+                    "
+                  />
+                </div>
 
-                <Button
-                  type="submit"
+                <motion.button
+                  type="button"
+                  whileHover={{ scale: 1.02, boxShadow: "0 14px 32px rgba(8,124,67,0.28)" }}
+                  whileTap={{ scale: 0.98 }}
                   className="
                     h-11 w-full cursor-pointer rounded-full
                     bg-[#087c43] text-[13px] font-bold uppercase text-white
-                    shadow-[0_12px_28px_rgba(8,124,67,0.22)]
-                    transition duration-200 hover:bg-[#063f32]
+                    shadow-[0_10px_24px_rgba(8,124,67,0.22)]
+                    transition-shadow duration-200 hover:bg-[#0a6f3d]
+                    active:bg-[#055a30]
                   "
                 >
-                  Gửi thông tin
-                </Button>
+                  <span className="flex items-center justify-center gap-2">
+                    <CheckCircle2 size={15} strokeWidth={2.2} />
+                    Gửi thông tin
+                  </span>
+                </motion.button>
               </div>
-            </form>
+            </motion.div>
           </div>
         </div>
       </div>

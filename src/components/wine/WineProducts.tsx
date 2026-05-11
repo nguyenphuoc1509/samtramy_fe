@@ -1,8 +1,11 @@
-import Image from "next/image";
-import { ShoppingCart } from "lucide-react";
+"use client";
 
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { wineProducts } from "./wine-data";
+import { AnimateOnScroll, StaggerContainer, staggerItemVariants } from "./AnimateOnScroll";
 
 interface ProductCardProps {
   name: string;
@@ -11,18 +14,16 @@ interface ProductCardProps {
   oldPrice?: string;
 }
 
-function ProductCard({
-  name,
-  image,
-  price,
-  oldPrice,
-}: ProductCardProps) {
+function ProductCard({ name, image, price, oldPrice }: ProductCardProps) {
   return (
-    <article
+    <motion.article
+      variants={staggerItemVariants}
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.22 }}
       className="
         flex min-h-[420px] flex-col overflow-hidden rounded-3xl bg-[#f8faf8]
         ring-1 ring-[#e3ebe6]
-        transition duration-200 hover:-translate-y-1 hover:bg-white
+        transition-colors duration-200 hover:bg-white
         hover:shadow-[0_16px_34px_rgba(6,63,50,0.08)]
       "
     >
@@ -89,15 +90,15 @@ function ProductCard({
           </Button>
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }
 
 export function WineProducts() {
   return (
-    <section id="wine-products" className="bg-white py-20 md:py-24">
+    <section id="wine-products" className="bg-[#f6efe2] py-20 md:py-24">
       <div className="site-container">
-        <div className="mx-auto max-w-[820px] text-center">
+        <AnimateOnScroll className="mx-auto max-w-[820px] text-center" animation="fadeUp">
           <p className="mb-3 text-[13px] font-bold uppercase tracking-[0.28em] text-[#087c43]">
             Bộ sản phẩm
           </p>
@@ -110,9 +111,13 @@ export function WineProducts() {
             Samtramy mang đến các dòng rượu Sâm Ngọc Linh phù hợp cho nhu cầu
             mua lẻ, quà biếu, tiếp khách hoặc đặt số lượng cho doanh nghiệp.
           </p>
-        </div>
+        </AnimateOnScroll>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+        <StaggerContainer
+          className="mt-12 grid gap-5 lg:grid-cols-3"
+          staggerDelay={0.11}
+          delayChildren={0.12}
+        >
           {wineProducts.map((item) => (
             <ProductCard
               key={item.name}
@@ -122,7 +127,7 @@ export function WineProducts() {
               oldPrice={item.oldPrice}
             />
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

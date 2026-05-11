@@ -1,5 +1,9 @@
+"use client";
+
 import type { LucideIcon } from "lucide-react";
+import { motion } from "framer-motion";
 import { wineHighlights } from "./wine-data";
+import { AnimateOnScroll, StaggerContainer, staggerItemVariants } from "./AnimateOnScroll";
 
 interface HighlightCardProps {
   icon: LucideIcon;
@@ -9,11 +13,14 @@ interface HighlightCardProps {
 
 function HighlightCard({ icon: Icon, title, description }: HighlightCardProps) {
   return (
-    <article
+    <motion.article
+      variants={staggerItemVariants}
+      whileHover={{ y: -4 }}
+      transition={{ duration: 0.2 }}
       className="
         flex min-h-[260px] flex-col rounded-3xl bg-[#f8faf8] p-6
         ring-1 ring-[#e3ebe6]
-        transition duration-200 hover:-translate-y-1 hover:bg-white
+        transition-colors duration-200 hover:bg-white
         hover:shadow-[0_16px_34px_rgba(6,63,50,0.08)]
       "
     >
@@ -28,7 +35,7 @@ function HighlightCard({ icon: Icon, title, description }: HighlightCardProps) {
       <p className="mt-3 flex-1 text-[14px] leading-7 text-[#6f827b]">
         {description}
       </p>
-    </article>
+    </motion.article>
   );
 }
 
@@ -36,7 +43,7 @@ export function WineHighlights() {
   return (
     <section className="bg-white py-20 md:py-24">
       <div className="site-container">
-        <div className="mx-auto max-w-[820px] text-center">
+        <AnimateOnScroll className="mx-auto max-w-[820px] text-center" animation="fadeUp">
           <p className="mb-3 text-[13px] font-bold uppercase tracking-[0.28em] text-[#087c43]">
             Điểm nổi bật
           </p>
@@ -49,9 +56,13 @@ export function WineHighlights() {
             Không chỉ là một sản phẩm rượu, đây còn là món quà mang câu chuyện
             bản địa, sự sang trọng và sự trân trọng dành cho người nhận.
           </p>
-        </div>
+        </AnimateOnScroll>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <StaggerContainer
+          className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3"
+          staggerDelay={0.09}
+          delayChildren={0.1}
+        >
           {wineHighlights.map((item) => (
             <HighlightCard
               key={item.title}
@@ -60,7 +71,7 @@ export function WineHighlights() {
               description={item.description}
             />
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );
