@@ -40,7 +40,7 @@ const ingredientImages = [
 
 export function WineIngredientsSection() {
   return (
-    <section className="relative overflow-hidden bg-[#f8f1e6] py-20 md:py-24">
+    <section className="relative overflow-hidden bg-[#f5f5f3] py-20 md:py-24">
       {/* Soft background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(245,211,107,0.16),transparent_34%)]" />
       <div className="absolute right-0 top-0 h-[260px] w-[520px] bg-[#063f32]/5 blur-[90px]" />
@@ -151,7 +151,7 @@ export function WineIngredientsSection() {
           <WineConsultButton
             className="
               h-12 cursor-pointer rounded-full
-              bg-[#087c43]
+              bg-gradient-to-r from-[#ff7a3d] to-[#e9235f]
               px-10 text-[14px] font-bold uppercase text-white
               shadow-[0_14px_28px_rgba(229,35,95,0.26)]
               transition duration-200 hover:-translate-y-0.5

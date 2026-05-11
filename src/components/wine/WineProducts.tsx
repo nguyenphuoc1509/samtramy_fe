@@ -96,7 +96,7 @@ function ProductCard({ name, image, price, oldPrice }: ProductCardProps) {
 
 export function WineProducts() {
   return (
-    <section id="wine-products" className="bg-[#f6efe2] py-20 md:py-24">
+    <section id="wine-products" className="bg-[#f5f5f3] py-20 md:py-24">
       <div className="site-container">
         <AnimateOnScroll className="mx-auto max-w-[820px] text-center" animation="fadeUp">
           <p className="mb-3 text-[13px] font-bold uppercase tracking-[0.28em] text-[#087c43]">
