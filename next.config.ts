@@ -51,6 +51,14 @@ const nextConfig: NextConfig = {
         source: "/thong-tin-ca-nhan",
         destination: "/profile",
       },
+      {
+        source: "/ruou-samtramy",
+        destination: "/wine",
+      },
+      {
+        source: "/san-pham-tieu-dung",
+        destination: "/distribution",
+      },
     ];
   },
 };

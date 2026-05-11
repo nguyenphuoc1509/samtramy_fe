@@ -12,7 +12,7 @@ import {
   TradeSupportSection,
   CooperationProcessSection,
 } from "@/components/distribution";
-import Header from "@/components/layout/Header";
+import HeaderDistribution from "@/components/layout/HeaderDistribution";
 import Footer from "@/components/layout/Footer";
 import StickyHeader from "@/components/layout/StickyHeader";
 
@@ -35,7 +35,7 @@ export default function ConsumerGoodsDistributionPage() {
   return (
     <main className="w-full bg-[#f5f5f3]">
       <StickyHeader>
-        <Header />
+        <HeaderDistribution />
       </StickyHeader>
       <HeroSection />
       <SupplierValuesSection />

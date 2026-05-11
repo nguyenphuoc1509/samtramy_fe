@@ -179,3 +179,7 @@ body {
   font-style: italic;
   color: #063f32;
 }
+
+html {
+  scroll-behavior: smooth;
+}
